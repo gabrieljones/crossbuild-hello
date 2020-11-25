@@ -1,5 +1,16 @@
 plugins {
   scala
+  id("com.github.prokod.gradle-crossbuild-scala") version "0.12.0"
+}
+
+archivesBaseName = "crossbuild-hello"
+
+crossBuild {
+  builds {
+    scala {
+      scalaVersions = ["2.11", "2.12", "2.13"]
+    }
+  }
 }
 
 repositories {
